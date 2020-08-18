@@ -10,7 +10,7 @@
             <transition appear enter-active-class="animate__animated animate__slideInLeft">
               <div v-if="show">
                 <h4 class="header-title-name">Hello, I'm Kenneth,</h4>
-                <h1 class="header-title">A Full Stack Web Developer</h1>
+                <h1 class="header-title">A Front-End Web Developer</h1>
               </div>
             </transition>
           </div>
