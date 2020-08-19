@@ -5,7 +5,7 @@
         <div class="img-logo">
           <v-img :src="require('./assets/logo-eye.png')" max-width="150"></v-img>
         </div>
-        <section class="section-title pt-10">
+        <section class="section-title d-flex justify-space-between" style="margin-top: 100px">
           <div class="section-title-left">
             <transition appear enter-active-class="animate__animated animate__slideInLeft">
               <div v-if="show">
@@ -14,12 +14,11 @@
               </div>
             </transition>
           </div>
-          <div class="section-title-right"></div>
+          <div class="section-title-right" style="width: 50%"></div>
         </section>
       </v-container>
     </header>
     <v-main>
-      <!-- :class="[`${windowWidth > 960 ? 'section-intro-polygon' : ''}`]" -->
       <section class="section-intro">
         <v-container>
           <transition appear enter-active-class="animate__animated animate__slideInDown">
@@ -67,7 +66,38 @@
           </v-row>
         </v-container>
       </section>
-      <v-footer dark padless>
+      <section class="section-project">
+        <v-container>
+          <h1 class="heading-secondary text-center">Recent Projects</h1>
+          <p class="text-center pt-5" style="font-size: 1.3rem">5 Websites developed and still growing...</p>
+        </v-container>
+      </section>
+      <v-row class="section-project-list">
+        <v-col>
+          <v-hover v-slot:default="{ hover }">
+            <v-card
+              class="mx-auto"
+              max-width="500"
+              dark
+              color="grey darken-4"
+              href="https://gamispot-app.netlify.app/"
+              target="_blank"
+            >
+              <v-card-title style="font-family: 'Skranji', cursive; font-size: 1.25rem;">~GameSpot~</v-card-title>
+              <v-img class="white--text align-end" contain :src="require('./assets/project-section-1.png')"></v-img>
+              <v-fade-transition>
+                <div v-if="hover" class="d-flex flex-column grey darken-4 v-card-reveal" style="height: 100%">
+                  <div style="font-family: 'Skranji', cursive; font-size: 2rem;">~GameSpot~</div>
+                  <div style="width: 75%" class="text-center">
+                    GameSpot is a video gaming website using Vuejs and Vuetify
+                  </div>
+                </div>
+              </v-fade-transition>
+            </v-card>
+          </v-hover>
+        </v-col>
+      </v-row>
+      <v-footer dark padless style="margin-top: 100px">
         <v-card width="100%" flat tile color="#201e1f" class="white--text text-center py-10">
           <v-row style="height: 150px;" align-content="center" justify="center">
             <v-img :src="require('./assets/logo-eye.png')" max-width="150"></v-img>
@@ -108,7 +138,6 @@ export default {
   },
 
   data: () => ({
-    windowWidth: window.innerWidth,
     show: true,
     stacks: [
       {
@@ -193,12 +222,6 @@ export default {
       },
     ],
   }),
-
-  mounted() {
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth;
-    };
-  },
 };
 </script>
 
@@ -244,11 +267,31 @@ export default {
   color: #413f3f;
 }
 
+.section-project {
+  background-color: #7b1fa2;
+  color: #fff;
+  padding: 10rem 0;
+  clip-path: polygon(0 0, 100% 12rem, 100% 100%, 0 75%);
+}
+
+.section-project-list {
+  margin-top: -100px;
+}
+
 .footer-qoutes {
   width: 40%;
   margin: 0 auto;
   font-size: 1rem;
   font-weight: 400;
+}
+
+.v-card-reveal {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  /* opacity: 0.5; */
+  position: absolute;
+  width: 100%;
 }
 
 @media screen and (max-width: 900px) {
@@ -271,7 +314,8 @@ export default {
     font-size: 4.5rem;
   }
 
-  .section-intro {
+  .section-intro,
+  .section-project {
     padding: 2rem 50px;
     clip-path: none;
   }
@@ -282,6 +326,10 @@ export default {
 
   .section-skills {
     padding: 0 50px;
+  }
+
+  .section-project-list {
+    margin-top: 0;
   }
 }
 
