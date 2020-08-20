@@ -7,7 +7,7 @@
         </div>
         <section class="section-title d-flex justify-space-between" style="margin-top: 100px">
           <div class="section-title-left">
-            <transition appear enter-active-class="animate__animated animate__slideInLeft">
+            <transition appear enter-active-class="animate__animated animate__slideInLeft animate__delay-1s">
               <div v-if="show">
                 <h4 class="header-title-name">Hello, I'm Kenneth,</h4>
                 <h1 class="header-title">A Front-End Web Developer</h1>
@@ -84,7 +84,7 @@
               target="_blank"
             >
               <v-card-title style="font-family: 'Skranji', cursive; font-size: 1.25rem;">~GameSpot~</v-card-title>
-              <v-img class="white--text align-end" contain :src="require('./assets/project-section-1.png')"></v-img>
+              <v-img class="white--text align-end" contain :src="require('./assets/project-section-1.jpg')"></v-img>
               <v-fade-transition>
                 <div v-if="hover" class="d-flex flex-column grey darken-4 v-card-reveal" style="height: 100%">
                   <div style="font-family: 'Skranji', cursive; font-size: 2rem;">~GameSpot~</div>
@@ -112,11 +112,11 @@
             <v-btn class="mx-4 white--text" icon href="https://twitter.com/PinedaKenneth98" target="_blank">
               <v-icon size="3rem">mdi-twitter</v-icon>
             </v-btn>
-            <!-- <v-btn class="mx-4 white--text" icon>
-              <v-icon size="3rem">mdi-linkedin</v-icon>
-            </v-btn> -->
             <v-btn class="mx-4 white--text" icon href="https://www.instagram.com/pinedakenneth98/" target="_blank">
               <v-icon size="3rem">mdi-instagram</v-icon>
+            </v-btn>
+            <v-btn class="mx-4 white--text" icon href="https://github.com/djkenneth" target="_blank">
+              <v-icon size="3rem">mdi-github</v-icon>
             </v-btn>
           </v-card-text>
           <v-card-text class="white--text pt-12" style="font-size: 1rem; font-weight: 400;">
@@ -226,6 +226,10 @@ export default {
 </script>
 
 <style>
+.deley {
+  transition-delay: 3s;
+}
+
 .header-title-name {
   font-size: 2.5rem;
   font-weight: 400;
