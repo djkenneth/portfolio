@@ -193,18 +193,3 @@
     }
   }
 }
-
-@media screen and (max-width: 339px) {
-  .section-skills {
-    .card-width {
-      max-width: 100px;
-      margin-right: 6px;
-
-      .card-title {
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 1rem !important;
-      }
-    }
-  }
-}
