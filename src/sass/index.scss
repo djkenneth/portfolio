@@ -1,0 +1,158 @@
+.img-header {
+  height: 90vh;
+
+  .section-title {
+    width: 60%;
+    height: 85%;
+
+    .header-title-name {
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+
+    .header-title {
+      font-size: 5rem;
+    }
+  }
+}
+
+.section-intro {
+  background-color: #201e1f;
+  color: #fff;
+  padding: 10rem 0;
+  clip-path: polygon(0 0, 100% 12rem, 100% 100%, 0 75%);
+
+  .heading-secondary {
+    font-size: 3rem;
+  }
+
+  .paragraph-primary {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    font-weight: 300;
+    width: 70%;
+  }
+}
+
+.section-skills {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+
+  .heading-secondary {
+    font-size: 3rem;
+  }
+
+  .skill-paragraph {
+    font-size: 1.2rem;
+    color: #413f3f;
+  }
+}
+
+.section-project {
+  background-color: #7b1fa2;
+  color: #fff;
+  padding: 10rem 0;
+  clip-path: polygon(0 0, 100% 12rem, 100% 100%, 0 75%);
+}
+
+.section-project-list {
+  margin-top: -100px;
+
+  .v-card-reveal {
+    align-items: center;
+    bottom: 0;
+    justify-content: center;
+    // opacity: 0.5;
+    position: absolute;
+    width: 100%;
+  }
+
+  .bg-color {
+    background-color: #fca311;
+  }
+}
+
+.footer-qoutes {
+  width: 40%;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 900px) {
+  header.img-header {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../assets/imageBackground.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    .section-title {
+      width: 100vw;
+    }
+
+    .img-logo,
+    .header-title,
+    .header-title-name {
+      margin: 0 50px;
+    }
+
+    .header-title {
+      font-size: 4.5rem;
+    }
+  }
+
+  .section-intro {
+    padding: 2rem 50px;
+    clip-path: none;
+
+    .paragraph-primary {
+      width: 80%;
+    }
+  }
+
+  .section-skills {
+    padding: 0 50px;
+  }
+
+  .section-project {
+    padding: 2rem 50px;
+    clip-path: none;
+  }
+
+  .section-project-list {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header.img-header {
+    .section-title {
+      .header-title {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header.img-header {
+    .img-logo {
+      width: 130px;
+    }
+
+    .section-title {
+      .header-title-name {
+        font-size: 1.5rem;
+      }
+
+      .header-title {
+        font-size: 3.5rem;
+      }
+    }
+  }
+
+  .paragraph-primary {
+    width: 100%;
+  }
+}
