@@ -33,37 +33,16 @@
             <h1 class="heading-secondary">My Stacks</h1>
             <p class="skill-paragraph">My Programming Languages and web technologies that I using.</p>
           </div>
-          <!-- <v-row>
-            <v-col lg="2" md="3" sm="4" cols="6" v-for="stack in stacks" :key="stack.id">
-              <v-card
-                max-width="170"
-                class="scrolls-1"
-                :style="{
-                  backgroundImage: `linear-gradient(${stack.position}, ${stack.colorBottom}, ${stack.colorTop})`,
-                }"
-              >
-                <v-card-text class="pa-7">
-                  <v-img eager class="white--text ma-auto" :src="stack.img"></v-img>
-                </v-card-text>
-                <v-card-title>
-                  {{ stack.title }}
-                </v-card-title>
-              </v-card>
-            </v-col>
-          </v-row> -->
           <div class="d-flex flex-wrap">
             <div v-for="stack in stacks" :key="stack.id" class="scrolls-1">
               <v-card
-                max-width="180"
-                class="mr-13 mb-10"
-                :style="{
-                  backgroundImage: `linear-gradient(${stack.position}, ${stack.colorBottom}, ${stack.colorTop})`,
-                }"
+                class="mb-10 card-width"
+                :style="`background-image: linear-gradient(${stack.position}, ${stack.colorBottom}, ${stack.colorTop})`"
               >
                 <v-card-text class="pa-7">
                   <v-img eager class="white--text ma-auto" :src="stack.img"></v-img>
                 </v-card-text>
-                <v-card-title>
+                <v-card-title class="card-title">
                   {{ stack.title }}
                 </v-card-title>
               </v-card>
@@ -82,7 +61,7 @@
           <v-hover v-slot:default="{ hover }">
             <v-card class="mx-auto" max-width="500" dark color="grey darken-4" href="https://gamespot-app.netlify.app/" target="_blank">
               <v-card-title style="font-family: 'Skranji', cursive; font-size: 1.25rem;">~GameSpot~</v-card-title>
-              <v-img class="white--text align-end" contain :src="require('@/assets/project-section-1.jpg')"></v-img>
+              <v-img eager class="white--text align-end" contain :src="require('@/assets/project-section-1.jpg')"></v-img>
               <v-fade-transition>
                 <div v-if="hover" class="d-flex flex-column grey darken-4 v-card-reveal" style="height: 100%">
                   <div style="font-family: 'Skranji', cursive; font-size: 2rem;">~GameSpot~</div>
@@ -98,7 +77,7 @@
           <v-hover v-slot:default="{ hover }">
             <v-card class="mx-auto" max-width="500" dark color="bg-color" href="https://pclinkshop.netlify.app/" target="_blank">
               <v-card-title style="font-family: 'Skranji', cursive; font-size: 1.25rem;">PCLINK</v-card-title>
-              <v-img class="white--text align-end" contain :src="require('@/assets/project-section-2.jpg')"></v-img>
+              <v-img eager class="white--text align-end" contain :src="require('@/assets/project-section-2.jpg')"></v-img>
               <v-fade-transition>
                 <div v-if="hover" class="d-flex flex-column bg-color v-card-reveal" style="height: 100%">
                   <div style="font-family: 'Skranji', cursive; font-size: 2rem;">PCLINK</div>
@@ -270,8 +249,6 @@ export default {
         entries.forEach((entry) => {
           if (entry.intersectionRatio > 0) {
             entry.target.className = "animate__animated animate__fadeInUp animate__delay-0.5s";
-          } else {
-            entry.target.className = "animate__animated animate__fadeOutDown";
           }
         });
       });
