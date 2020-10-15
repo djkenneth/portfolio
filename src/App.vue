@@ -33,21 +33,27 @@
             <h1 class="heading-secondary">My Stacks</h1>
             <p class="skill-paragraph">My Programming Languages and web technologies that I using.</p>
           </div>
-          <div class="d-flex flex-wrap">
-            <div v-for="stack in stacks" :key="stack.id" class="scrolls-1">
-              <v-card
-                class="mb-10 card-width"
-                :style="`background-image: linear-gradient(${stack.position}, ${stack.colorBottom}, ${stack.colorTop})`"
-              >
-                <v-card-text class="pa-7">
-                  <v-img eager class="white--text ma-auto" :src="stack.img"></v-img>
-                </v-card-text>
-                <v-card-title class="card-title">
-                  {{ stack.title }}
-                </v-card-title>
-              </v-card>
-            </div>
-          </div>
+          <!-- GRID CARD -->
+          <v-row>
+            <v-col lg="2" md="3" sm="4" xs="6" cols="auto" v-for="stack in stacks" :key="stack.id" class="sm-m-auto">
+              <div class="scrolls-1">
+                <v-card
+                  max-width="170"
+                  class="ma-auto"
+                  :style="{
+                    backgroundImage: `linear-gradient(${stack.position}, ${stack.colorBottom}, ${stack.colorTop})`,
+                  }"
+                >
+                  <v-card-text class="pa-7">
+                    <v-img eager class="white--text ma-auto" :src="stack.img"></v-img>
+                  </v-card-text>
+                  <v-card-title>
+                    {{ stack.title }}
+                  </v-card-title>
+                </v-card>
+              </div>
+            </v-col>
+          </v-row>
         </v-container>
       </section>
       <section class="section-project">
