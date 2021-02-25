@@ -121,7 +121,7 @@
           </v-card-text>
           <v-card-text class="white--text pt-12" style="font-size: 1rem; font-weight: 400;">
             Designed and developed with ❤️ by Kenneth Ivan Pineda
-            <h4 class="body-1">All right reserved 2020</h4>
+            <h4 class="body-1">All right reserved {{ new Date().getFullYear() }}</h4>
           </v-card-text>
         </v-card>
       </v-footer>
