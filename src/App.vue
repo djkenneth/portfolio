@@ -96,6 +96,22 @@
             </v-card>
           </v-hover>
         </v-col>
+        <v-col>
+          <v-hover v-slot:default="{ hover }">
+            <v-card class="mx-auto" max-width="500" dark color="grey darken-4" href="https://ryxmovie.herokuapp.com/" target="_blank">
+              <v-card-title style="font-family: 'Skranji', cursive; font-size: 1.25rem;">RYX MOVIE APP</v-card-title>
+              <v-img eager class="white--text align-end" contain :src="require('@/assets/project-section-3.jpg')"></v-img>
+              <v-fade-transition>
+                <div v-if="hover" class="d-flex flex-column grey darken-4 v-card-reveal" style="height: 100%">
+                  <div style="font-family: 'Skranji', cursive; font-size: 2rem;">RYX MOVIE APP</div>
+                  <div style="width: 75%" class="text-center">
+                    RXYMOVIE is a movie information website using Vue.js, Vuetify, and TMDB API
+                  </div>
+                </div>
+              </v-fade-transition>
+            </v-card>
+          </v-hover>
+        </v-col>
       </v-row>
       <v-footer dark padless style="margin-top: 100px">
         <v-card width="100%" flat tile color="#201e1f" class="white--text text-center py-10">
